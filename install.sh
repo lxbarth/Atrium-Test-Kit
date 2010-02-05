@@ -8,6 +8,6 @@ PHPUNIT=/user/bin/phpunit
 SCRIPT=AtriumInstall.php
 
 # Create test directory for test files and run tests.
-TESTDIR=$WORKSPACE"/"$BUILD_ID"/results-install/"
+TESTDIR=$WORKSPACE"/"$BUILD_ID"/testresults/"
 mkdir $TESTDIR
-$PHPUNIT --log-junit $TESTDIR"/install.log" $SCRIPT
+$PHPUNIT --log-junit $TESTDIR"/install.xml" $SCRIPT
