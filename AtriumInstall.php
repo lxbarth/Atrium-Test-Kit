@@ -3,6 +3,9 @@
 /**
  * @file
  * Install Open Atrium through browser.
+ *
+ * @todo Move configuration elements such as the path to the site and the 
+ * browser to use out of this script.
  */
 
 require_once 'PHPUnit/Extensions/SeleniumTestCase.php';
@@ -25,7 +28,7 @@ class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
     for ($second = 0; ; $second++) {
         if ($second >= 60) $this->fail("timeout");
         try {
-            if ((bool)preg_match(/^http:\/\/localhost\/atrium\/install\.php[\s\S]profile=openatrium&locale=en$/,$this->getLocation());) break;
+            if ((bool)preg_match("/^http:\/\/localhost\/atrium\/install\.php[\s\S]profile=openatrium&locale=en$/",$this->getLocation())) break;
         } catch (Exception $e) {}
         sleep(1);
     }
@@ -39,7 +42,7 @@ class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
     for ($second = 0; ; $second++) {
         if ($second >= 60) $this->fail("timeout");
         try {
-            if ((bool)preg_match(/^http:\/\/localhost\/atrium\/install\.php[\s\S]locale=en&profile=openatrium$/,$this->getLocation());) break;
+            if ((bool)preg_match("/^http:\/\/localhost\/atrium\/install\.php[\s\S]locale=en&profile=openatrium$/",$this->getLocation())) break;
         } catch (Exception $e) {}
         sleep(1);
     }
@@ -53,7 +56,7 @@ class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
     for ($second = 0; ; $second++) {
         if ($second >= 60) $this->fail("timeout");
         try {
-            if ((bool)preg_match(/^http:\/\/localhost\/atrium\/install\.php[\s\S]locale=en&profile=openatrium$/,$this->getLocation());) break;
+            if ((bool)preg_match("/^http:\/\/localhost\/atrium\/install\.php[\s\S]locale=en&profile=openatrium$/",$this->getLocation())) break;
         } catch (Exception $e) {}
         sleep(1);
     }
