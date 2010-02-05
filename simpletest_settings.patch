@@ -1,0 +1,13 @@
+diff --git a/sites/default/settings.php b/sites/default/settings.php
+index af9378d..d781c54 100644
+--- a/sites/default/settings.php
++++ b/sites/default/settings.php
+@@ -237,3 +237,8 @@ ini_set('url_rewriter.tags',        '');
+ #   'forum'      => 'Discussion board',
+ #   '@count min' => '@count minutes',
+ # );
++
++$GLOBALS['simpletest_installed'] = TRUE;
++if (preg_match("/^simpletest\d+$/", $_SERVER['HTTP_USER_AGENT'])) {
++  $db_prefix = $_SERVER['HTTP_USER_AGENT'];
++}
