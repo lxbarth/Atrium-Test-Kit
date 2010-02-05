@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Hudson provided variables, uncomment for testing.
-WORKSPACE=/tmp
-BUILD_ID=`date +%F_%k-%M-%S`
-mkdir $WORKSPACE"/atrium-test-tmp_"$BUILD_ID
-
 # Configure rebuild
 # @todo Move to configuration file.
 DRUSH=/usr/bin/drush
@@ -15,11 +10,11 @@ DBHOST=localhost
 DBNAME=atrium
 DBUSER=atrium
 DBPW=atrium
-TMPDIR=$WORKSPACE"/atrium-test-tmp_"$BUILD_ID"/build-tmp/"
+TMPDIR="/tmp/atrium-test-tmp_"`date +%F_%k-%M-%S`"/"
 PROFILECMD="git clone git://github.com/developmentseed/openatrium.git "$TMPDIR"openatrium"
 PROFILENAME=openatrium
 
-# Create temporary directory.
+# Create temporary build directory.
 mkdir $TMPDIR
 
 # Blow away existing installation.
