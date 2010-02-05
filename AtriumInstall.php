@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Install Open Atrium through browser.
+ */
+
 require_once 'PHPUnit/Extensions/SeleniumTestCase.php';
 
 class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
@@ -25,6 +30,7 @@ class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
         sleep(1);
     }
 
+    sleep(0.2);
     $this->type("edit-db-path", "atrium");
     $this->type("edit-db-user", "atrium");
     $this->type("edit-db-pass", "atrium");

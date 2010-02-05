@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Rebuild Open Atrium and prepare it for installation. Does not actually
+# install Open Atrium
+
 # Configure rebuild
 # @todo Move to configuration file.
 DRUSH=/usr/bin/drush
