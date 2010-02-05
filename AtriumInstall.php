@@ -69,16 +69,6 @@ class AtriumInstall extends PHPUnit_Extensions_SeleniumTestCase
     } catch (PHPUnit_Framework_AssertionFailedError $e) {
         array_push($this->verificationErrors, $e->toString());
     }
-    try {
-        $this->assertFalse($this->isTextPresent("warning"));
-    } catch (PHPUnit_Framework_AssertionFailedError $e) {
-        array_push($this->verificationErrors, $e->toString());
-    }
-    try {
-        $this->assertFalse($this->isTextPresent("error"));
-    } catch (PHPUnit_Framework_AssertionFailedError $e) {
-        array_push($this->verificationErrors, $e->toString());
-    }
   }
 }
 ?>

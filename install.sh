@@ -12,7 +12,8 @@ TESTDIR=$WORKSPACE"/"$BUILD_NUMBER"/testresults/"
 
 # Create test directory for test files and run tests.
 if [ ! -d $TESTDIR ]; then
+  mkdir $WORKSPACE"/"$BUILD_NUMBER
   mkdir $TESTDIR
 fi
 
-$PHPUNIT --log-junit $TESTDIR"/install.xml" $SCRIPT
+$PHPUNIT --log-junit $TESTDIR"install.xml" $SCRIPT
