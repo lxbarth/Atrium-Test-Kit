@@ -42,6 +42,7 @@ cd $DRUPALPATH"profiles/"$PROFILENAME
 $DRUSH make --yes --working-copy --no-core --contrib-destination=. "openatrium.make.dev"
 
 # Clean up.
+chmod g+w $DRUPALPATH
 rm -rf $TMPDIR
 
 exit 0
