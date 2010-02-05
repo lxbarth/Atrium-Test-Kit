@@ -1,0 +1,7 @@
+
+# Open Atrium Test Kit for Hudson
+
+Collection of scripts for testing Open Atrium with Hudson.
+
+rebuild.sh ... Rebuilds Open Atrium from dev make file.
+run-simpletests.sh ... Runs Open Atrium Drupal simpletests.
