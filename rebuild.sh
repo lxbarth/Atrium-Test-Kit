@@ -41,7 +41,7 @@ cp -r $TMPDIR$PROFILENAME $DRUPALPATH"profiles/"$PROFILENAME
 cd $DRUPALPATH"profiles/"$PROFILENAME
 $DRUSH make --yes --working-copy --no-core --contrib-destination=. "openatrium.make.dev"
 
-# Clean up.
+# Clean up, make sure files are writeable to group.
 chmod g+w $DRUPALPATH
 rm -rf $TMPDIR
 
