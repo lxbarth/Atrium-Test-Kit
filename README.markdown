@@ -13,3 +13,7 @@ This is very experimental stuff. I'm using this for reviewing automated testing
 of Drupal projects with Hudson.
 
 --Alex
+
+[Open Atrium](http://openatrium.com)
+
+[Hudson](https://hudson.dev.java.net/)
