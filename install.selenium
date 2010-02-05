@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/atrium" />
+<title>install</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">install</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/atrium/install.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>http://localhost/atrium/install.php?profile=openatrium&amp;locale=en</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-db-path</td>
+	<td>atrium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-db-user</td>
+	<td>atrium</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-db-pass</td>
+	<td>atrium</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>http://localhost/atrium/install.php?locale=en&amp;profile=openatrium</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-account-pass-pass1</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>edit-account-pass-pass2</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>edit-date-default-timezone-name</td>
+	<td>label=America/New_York</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForLocation</td>
+	<td>http://localhost/atrium/install.php?locale=en&amp;profile=openatrium</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>200</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=your new site</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Welcome to Open Atrium</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>warning</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextNotPresent</td>
+	<td>error</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
