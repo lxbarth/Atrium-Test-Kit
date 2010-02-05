@@ -9,10 +9,12 @@ PHP=/usr/bin/php
 DRUPALPATH=/var/www/atrium/
 DRUPALURL=http://localhost/atrium/
 TESTS=Atrium
-# This directory is created in install.sh
-TESTDIR=$WORKSPACE"/"$BUILD_ID"/testresults/"
+TESTDIR=$WORKSPACE"/"$BUILD_NUMBER"/testresults/"
 
 # Create test directory for test files and run tests.
+if [ ! -d $TESTDIR ]; then
+  mkdir $TESTDIR
+fi
 $PHP $DRUPALPATH"scripts/run-tests.sh" --xml $TESTDIR --url $DRUPALURL $TESTS > /dev/null
 
 exit 0
