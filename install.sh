@@ -6,7 +6,10 @@ set -x
 
 # Configure test
 # @todo Move to configuration file.
+DRUSH=/usr/bin/drush
 PHPUNIT=/usr/bin/phpunit
+DRUPALURL=http://localhost/atrium/
+DRUPALPATH=/var/www/atrium/
 SCRIPT=/home/ab/scripts/atrium-testkit/AtriumInstall.php
 TESTDIR=$WORKSPACE"/"$BUILD_NUMBER"-testresults/"
 
@@ -16,3 +19,4 @@ if [ ! -d $TESTDIR ]; then
 fi
 
 $PHPUNIT --log-junit $TESTDIR"install.xml" $SCRIPT
+$DRUSH -y r $DRUPALPATH -l $DRUPALURL enable simpletest

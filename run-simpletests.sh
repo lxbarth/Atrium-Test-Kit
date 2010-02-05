@@ -11,10 +11,12 @@ DRUPALURL=http://localhost/atrium/
 TESTS=Atrium
 TESTDIR=$WORKSPACE"/"$BUILD_NUMBER"-testresults/"
 
-# Create test directory for test files and run tests.
+# Create test directory.
 if [ ! -d $TESTDIR ]; then
   mkdir $TESTDIR
 fi
-$PHP $DRUPALPATH"scripts/run-tests.sh" --xml $TESTDIR --url $DRUPALURL $TESTS > /dev/null
+
+# Run tests.
+$PHP $DRUPALPATH"scripts/run-tests.sh" --xml $TESTDIR --url $DRUPALURL $TESTS
 
 exit 0
