@@ -3,7 +3,7 @@
 # Hudson provided variables, uncomment for testing.
 WORKSPACE=/tmp
 BUILD_ID=`date +%F_%k-%M-%S`
-mkdir $WORKSPACE"/"$BUILD_ID
+mkdir $WORKSPACE"/atrium-test-tmp_"$BUILD_ID
 
 # Configure rebuild
 # @todo Move to configuration file.
@@ -15,7 +15,7 @@ DBHOST=localhost
 DBNAME=atrium
 DBUSER=atrium
 DBPW=atrium
-TMPDIR=$WORKSPACE"/"$BUILD_ID"/build-tmp/"
+TMPDIR=$WORKSPACE"/atrium-test-tmp_"$BUILD_ID"/build-tmp/"
 PROFILECMD="git clone git://github.com/developmentseed/openatrium.git "$TMPDIR"openatrium"
 PROFILENAME=openatrium
 
@@ -30,16 +30,16 @@ rm -rf $WWWDIR$DRUPALPATH
 # Download and prepare Drupal.
 $DRUSH dl drupal-6.15 --destination=$TMPDIR
 mv $TMPDIR"drupal-6.15/" $DRUPALPATH
-mv $DRUPALPATH"sites/default/default.settings.php" $DRUPALPATH"sites/default/settings.php"
+cp $DRUPALPATH"sites/default/default.settings.php" $DRUPALPATH"sites/default/settings.php"
 chmod 666 $DRUPALPATH"sites/default/settings.php"
 mkdir $DRUPALPATH"sites/default/files"
 chmod 777 $DRUPALPATH"sites/default/files"
 
 # Download and make Open Atrium dev version.
 $PROFILECMD
-cp -r $TMPDIR$PROFILENAME $DRUPALPATH$PROFILENAME
-cd /
-yes | $DRUSH make --working-copy --no-core --contrib-destination=$DRUPALPATH"profiles/"$PROFILENAME $DRUPALPATH$PROFILENAME"/openatrium.make.dev"
+cp -r $TMPDIR$PROFILENAME $DRUPALPATH"profiles/"$PROFILENAME
+cd $DRUPALPATH"profiles/"$PROFILENAME
+$DRUSH make --yes --working-copy --no-core --contrib-destination=. "openatrium.make.dev"
 
 # Clean up.
 rm -rf $TMPDIR
