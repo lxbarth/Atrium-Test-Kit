@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run Simpletests and place results in Hudson $WORKSPACE directory. Requires
+# patch http://drupal.org/node/602332
+
 # Configure test
 # @todo Move to configuration file.
 PHP=/usr/bin/php
