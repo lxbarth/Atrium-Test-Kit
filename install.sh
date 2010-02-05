@@ -2,8 +2,6 @@
 
 # Run install scripts for Atrium Tests and place results in Hudson $WORKSPACE.
 
-set -x
-
 # Configure test
 # @todo Move to configuration file.
 DRUSH=/usr/bin/drush
