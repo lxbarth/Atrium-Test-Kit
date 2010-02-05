@@ -19,4 +19,4 @@ if [ ! -d $TESTDIR ]; then
 fi
 
 $PHPUNIT --log-junit $TESTDIR"install.xml" $SCRIPT
-$DRUSH -y r $DRUPALPATH -l $DRUPALURL enable simpletest
+$DRUSH -y -r $DRUPALPATH -l $DRUPALURL enable simpletest
